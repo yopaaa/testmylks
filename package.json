@@ -1,0 +1,19 @@
+{
+  "name": "core-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node app.js",
+    "restart": "nodemon app.js",
+    "start": "pm2 start app.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nanoid": "^4.0.0"
+  }
+}
