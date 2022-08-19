@@ -17,20 +17,20 @@ const __dirname = path.resolve();
 const config = JSON.parse(fs.readFileSync("./data/config.json", 'utf8'));
 const port = config.port;
 const host = config.host;
+const sql = 'SELECT * FROM user_details'
 
 
 const connection = mysql.createConnection(config.sql_database);
 
-connection.connect(function(err){
-
-if(!err) {
-    console.log("Database is connected ... ");    
-} else {
-    console.log("Error connecting database ... ");    
-}
+connection.connect(err => {
+    if (err) throw err;
+    console.log("Connected!");
 });
 
 
+
+
+    
 // --------------------FUNCTION------------------
 app.get('/',(req,res) => {
     res.sendFile('./souce/index.html', {root: __dirname})
@@ -48,9 +48,11 @@ app.get('/wibu',(req,res) => {
 })
 
 app.get('/json',(req,res) => {
-    res.json({
-        sya:"sbsbsbsbsb"
-    })
+    connection.query(sql, function (err, result) {
+        if (err) throw err;
+        res.json(result)
+        console.log(result.length);
+    });
 })
 
 
