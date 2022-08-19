@@ -1,0 +1,11 @@
+{
+    "host":"0.0.0.0",
+    "port": 8000,
+    "sql_database": { 
+        "host": "ec2-52-33-41-xxx.us-west-2.compute.amazonaws.com",
+        "port":  "3306",
+        "user": "ec2-user",
+        "password": "root",
+        "database": "FAMILY_GIVING_TREE"
+    }
+}

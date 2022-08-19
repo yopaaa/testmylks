@@ -1,6 +1,8 @@
 // --------------------IMPORT------------------
 import express from 'express';
 import path from 'path';
+import mysql from 'mysql';
+import fs from 'fs';
 //import { myFunction } from './js/myFunction.js';
 
 
@@ -12,12 +14,21 @@ import path from 'path';
 // --------------------VARIABLE------------------
 const app = express();
 const __dirname = path.resolve();
-const port = 8000;
-const host = '0.0.0.0';
+const config = JSON.parse(fs.readFileSync("./data/config.json", 'utf8'));
+const port = config.port;
+const host = config.host;
 
 
+const connection = mysql.createConnection(config.sql_database);
 
+connection.connect(function(err){
 
+if(!err) {
+    console.log("Database is connected ... ");    
+} else {
+    console.log("Error connecting database ... ");    
+}
+});
 
 
 // --------------------FUNCTION------------------
