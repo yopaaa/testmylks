@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title><%= title %> </title>
 </head>
 <style>
     body{
@@ -18,7 +18,11 @@
     }
 </style>
 <body>
-    <center><h1>WIBU PAGE</h1></center>
+    <center><h1>HOME PAGE</h1></center>
+     
+    <%# data.forEach( datas => { %>
+      <!-- <h6><#%= datas.username %></h6>  -->
+    <%# }) %>
     <ul>
         <li>
           <p><a href="/">home</a></p>
@@ -30,7 +34,7 @@
             <p><a href="/wibu">wibu</a></p>
         </li>
         <li>
-            <p><a href="/mysql">test mysql</a></p>     
+            <p><a href="/database">database</a></p>     
          </li>
          <li>
              <p><a href="/wibuhahahahahha">404</a></p>

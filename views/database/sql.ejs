@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <title><%= title %> </title>
+</head>
+<style>
+    body{
+        font-family: 'Ubuntu', sans-serif;
+    }
+    h1{
+        font-size: 50px;
+    }
+    table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+    <center>
+   <table style="width: 80%; text-align: center;">
+        <tr>
+            <th>user id</th>
+            <th>username</th>
+            <th>name</th>
+            <th>gender</th>
+            <th>status</th>
+            <th>password</th>
+        </tr> 
+    <% data.forEach(element => { %>
+        <tr>
+            <td><%= element.user_id %></td>
+            <td><%= element.username %></td>
+            <td><%= element.first_name + element.last_name%></td>
+            <td><%= element.gender %></td>
+            <td><%= element.status %></td>
+            <td><%= element.password %></td>
+        </tr>
+    <% }) %>
+    </table>
+    </center>
+
+</body>
+</html>
