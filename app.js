@@ -24,7 +24,7 @@ const connection = mysql.createConnection(config.sql_database);
 
 connection.connect(err => {
     if (err) throw err;
-    console.log("Connected!");
+    console.log("Connected!") 
 });
 
 
@@ -47,7 +47,7 @@ app.get('/wibu',(req,res) => {
     res.sendFile('./souce/wibu.html', {root: __dirname})
 })
 
-app.get('/json',(req,res) => {
+app.get('/mysql',(req,res) => {
     connection.query(sql, function (err, result) {
         if (err) throw err;
         res.json(result)
