@@ -19,7 +19,9 @@ const host = config.host;
 
 
 
-const connection = mysql.createConnection(config.sql_database);
+const connection = mysql.createConnection(config.user_database);
+const major_connection = mysql.createConnection(config.majors_database);
+
 
 connection.connect(err => {
     if (err) throw err;
@@ -40,10 +42,14 @@ app.get('/',(req,res) => {
 })
 
 app.get('/about',(req,res) => {
-    const url = req.url
-    console.log(url); 
-    
-    res.render('about')
+    connection.query('SELECT * FROM majors', function (err, result) {
+        if (err) throw err;
+
+        res.render('about', {
+          title: 'majors database',
+          data:result
+          })
+    }); 
 })
 
 app.get('/wibu',(req,res) => {
