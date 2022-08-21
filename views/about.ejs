@@ -39,5 +39,20 @@
 
     <center><img src="https://source.unsplash.com/random/300x300"> </img></center>
 
+    <center>
+        <table style="width: 80%; text-align: center;">
+             <tr>
+                 <th>majors id</th>
+                 <th>majors name</th>
+             </tr> 
+         <% data.forEach(element => { %>
+             <tr>
+                 <td><%= element.majorsid %></td>
+                 <td><%= element.major_name %></td>
+             </tr>
+         <% }) %>
+         </table>
+         </center>
+
 </body>
 </html>
