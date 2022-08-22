@@ -57,7 +57,6 @@ app.get('/wibu',(req,res) => {
     res.render('wibu')
 })
 
-
 app.get('/database',(req,res) => {
     switch (req.query.db) {
         case 'sql':
