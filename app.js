@@ -42,7 +42,7 @@ app.get('/',(req,res) => {
 })
 
 app.get('/about',(req,res) => {
-    connection.query('SELECT * FROM majors', function (err, result) {
+    major_connection.query('SELECT * FROM majors', function (err, result) {
         if (err) throw err;
 
         res.render('about', {
