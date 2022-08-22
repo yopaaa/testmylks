@@ -2,7 +2,7 @@
 import express from 'express';
 import mysql from 'mysql';
 import fs from 'fs';
-//import { myFunction } from './js/myFunction.js';
+//import { myFunction } from './js/myFunction.js';k
 
 
 
